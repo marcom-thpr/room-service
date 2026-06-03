@@ -1,0 +1,648 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>The Highland Park Resort Bogor | Official Links</title>
+  <meta name="description" content="Official quick links for The Highland Park Resort Bogor: website, booking, WhatsApp, location, guest directory, room type, promo, Instagram, and TikTok." />
+  <style>
+    :root {
+      --pine: #063f2e;
+      --pine-2: #0b563c;
+      --pine-3: #0d6a4c;
+      --cream: #f8f1e5;
+      --cream-2: #fffaf1;
+      --gold: #c6a15a;
+      --gold-2: #d9bd77;
+      --white: #ffffff;
+      --ink: #123428;
+      --muted: #5f6b64;
+      --shadow: 0 14px 34px rgba(6, 63, 46, .22);
+      --soft-shadow: 0 8px 18px rgba(12, 31, 24, .14);
+      --radius-xl: 30px;
+      --radius-lg: 20px;
+      --radius-md: 16px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      min-height: 100vh;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      color: var(--ink);
+      background:
+        radial-gradient(circle at top, rgba(198, 161, 90, .16), transparent 34%),
+        linear-gradient(180deg, #f7f3ea 0%, #e9e1d3 100%);
+      display: flex;
+      justify-content: center;
+    }
+
+    .page-shell {
+      width: 100%;
+      max-width: 430px;
+      min-height: 100vh;
+      position: relative;
+      overflow: hidden;
+      background: var(--pine);
+    }
+
+    .hero-bg {
+      position: absolute;
+      inset: 0 0 auto 0;
+      height: 535px;
+      background:
+        linear-gradient(180deg, rgba(255, 250, 241, .90) 0%, rgba(255, 250, 241, .50) 28%, rgba(6, 63, 46, .15) 56%, rgba(6, 63, 46, .96) 100%),
+        url("https://thehighlandparkresortbogor.com/Indonesia/wp-content/uploads/edited_gunung_fix.jpg") center/cover no-repeat;
+      filter: saturate(.88) contrast(.98);
+      z-index: 0;
+    }
+
+    .hero-bg::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(circle at 50% 9%, rgba(255,255,255,.58), transparent 34%),
+        linear-gradient(90deg, rgba(6,63,46,.20), transparent 38%, rgba(6,63,46,.22));
+    }
+
+    .content {
+      position: relative;
+      z-index: 1;
+      padding: 48px 18px 30px;
+    }
+
+    .brand-header {
+      text-align: center;
+      padding: 0 18px;
+    }
+
+    .logo-mark {
+      width: 92px;
+      height: 92px;
+      border-radius: 999px;
+      margin: 0 auto 18px;
+      background: rgba(255, 250, 241, .78);
+      border: 1px solid rgba(217, 189, 119, .65);
+      box-shadow: 0 12px 24px rgba(2, 34, 24, .22);
+      display: grid;
+      place-items: center;
+      padding: 8px;
+      overflow: hidden;
+      position: relative;
+      backdrop-filter: blur(8px);
+    }
+
+    .logo-mark img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      display: block;
+      filter: drop-shadow(0 4px 8px rgba(2, 34, 24, .20));
+    }
+
+    .brand-title {
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: clamp(28px, 8vw, 37px);
+      line-height: .98;
+      font-weight: 500;
+      color: #103d2f;
+      text-shadow: 0 1px 1px rgba(255,255,255,.55);
+    }
+
+    .divider {
+      width: 190px;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--gold), transparent);
+      margin: 16px auto 8px;
+      position: relative;
+    }
+
+    .divider::after {
+      content: "❦";
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -52%);
+      color: var(--gold);
+      background: rgba(255, 250, 241, .78);
+      padding: 0 8px;
+      font-size: 13px;
+    }
+
+    .tagline {
+      font-size: 12px;
+      line-height: 1.35;
+      color: #173d32;
+      font-weight: 600;
+      max-width: 260px;
+      margin: 0 auto;
+    }
+
+    .spacer-hero {
+      height: 188px;
+    }
+
+    .value-card {
+      width: calc(100% - 10px);
+      margin: 0 auto 11px;
+      padding: 22px 18px 18px;
+      border-radius: 26px 26px 12px 12px;
+      background:
+        linear-gradient(180deg, rgba(11,86,60,.98), rgba(6,63,46,.98));
+      border: 1px solid rgba(217, 189, 119, .8);
+      box-shadow: var(--shadow);
+      text-align: center;
+      color: var(--cream-2);
+    }
+
+    .value-card h1 {
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 21px;
+      line-height: 1.05;
+      color: var(--gold-2);
+      font-weight: 500;
+      margin-bottom: 8px;
+    }
+
+    .value-card p {
+      font-size: 12.5px;
+      line-height: 1.42;
+      max-width: 310px;
+      margin: 0 auto 18px;
+      color: rgba(255, 250, 241, .95);
+    }
+
+    .audiences {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 8px;
+      align-items: start;
+    }
+
+    .audience-item {
+      min-height: 47px;
+      display: flex;
+      gap: 6px;
+      align-items: center;
+      justify-content: center;
+      color: var(--gold-2);
+      font-size: 9.5px;
+      line-height: 1.1;
+      border-right: 1px solid rgba(198, 161, 90, .42);
+    }
+
+    .audience-item:last-child {
+      border-right: 0;
+    }
+
+    .audience-icon {
+      font-size: 22px;
+      line-height: 1;
+      filter: sepia(.1);
+    }
+
+    .links {
+      display: grid;
+      gap: 7px;
+      width: calc(100% - 8px);
+      margin: 0 auto;
+    }
+
+    .cta {
+      min-height: 51px;
+      border: 1px solid rgba(198, 161, 90, .35);
+      border-radius: 14px;
+      background:
+        linear-gradient(180deg, rgba(255,250,241,.98), rgba(243,235,221,.98));
+      box-shadow: var(--soft-shadow);
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      padding: 7px 13px 7px 9px;
+      color: var(--ink);
+      text-decoration: none;
+      position: relative;
+      overflow: hidden;
+      transform: translateZ(0);
+      transition: transform .18s ease, box-shadow .18s ease, border-color .18s ease;
+    }
+
+    .cta:active {
+      transform: scale(.985);
+      box-shadow: 0 5px 12px rgba(12, 31, 24, .14);
+      border-color: rgba(198, 161, 90, .72);
+    }
+
+    .cta-icon {
+      width: 39px;
+      height: 39px;
+      flex: 0 0 39px;
+      border-radius: 10px;
+      display: grid;
+      place-items: center;
+      color: var(--cream-2);
+      background: linear-gradient(145deg, #0e5a41, #063828);
+      box-shadow: inset 0 1px 0 rgba(255,255,255,.16);
+      font-size: 20px;
+    }
+
+    .cta-label {
+      flex: 1;
+      font-size: 14.5px;
+      font-weight: 500;
+      letter-spacing: -.01em;
+    }
+
+    .chev {
+      color: #a87824;
+      font-size: 22px;
+      line-height: 1;
+      margin-left: auto;
+    }
+
+    .footer {
+      margin: 27px auto 0;
+      text-align: center;
+      color: var(--cream-2);
+      padding-bottom: 4px;
+    }
+
+    .footer-divider {
+      width: 260px;
+      height: 1px;
+      margin: 0 auto 14px;
+      background: linear-gradient(90deg, transparent, var(--gold), transparent);
+      position: relative;
+    }
+
+    .footer-divider::after {
+      content: "❦";
+      color: var(--gold-2);
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -53%);
+      background: var(--pine);
+      padding: 0 10px;
+    }
+
+    .footer h2 {
+      font-family: Georgia, "Times New Roman", serif;
+      color: var(--gold-2);
+      font-weight: 500;
+      font-size: 18px;
+      margin-bottom: 5px;
+    }
+
+    .footer p {
+      font-size: 11px;
+      color: rgba(255, 250, 241, .86);
+    }
+
+    .decor-line {
+      position: absolute;
+      right: 13px;
+      top: 350px;
+      width: 1px;
+      height: 455px;
+      background: linear-gradient(180deg, transparent, rgba(198,161,90,.72), transparent);
+      z-index: 1;
+      pointer-events: none;
+      opacity: .55;
+    }
+
+    .decor-line::before,
+    .decor-line::after {
+      content: "";
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 8px;
+      height: 8px;
+      border-radius: 99px;
+      border: 2px solid var(--gold);
+      background: var(--pine);
+    }
+
+    .decor-line::before { top: 2px; }
+    .decor-line::after { bottom: 10px; }
+
+
+
+    /* Button motion: hanya tombol paling atas yang bergerak zig-zag */
+    .cta {
+      will-change: transform, box-shadow;
+    }
+
+    .cta.is-top-motion {
+      animation:
+        ctaEnter .62s cubic-bezier(.2, .9, .2, 1) both,
+        topButtonZigzag 3.2s ease-in-out infinite;
+      animation-delay: 0ms, .75s;
+      border-color: rgba(198, 161, 90, .62);
+    }
+
+    .cta::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(120deg, transparent 0%, rgba(255,255,255,.58) 45%, transparent 70%);
+      transform: translateX(-130%) skewX(-18deg);
+      opacity: 0;
+      pointer-events: none;
+    }
+
+    .cta:hover,
+    .cta:focus-visible {
+      transform: translateY(-3px) scale(1.012);
+      box-shadow: 0 13px 26px rgba(12, 31, 24, .20);
+      border-color: rgba(198, 161, 90, .72);
+      outline: none;
+    }
+
+    .cta:hover::before,
+    .cta:focus-visible::before,
+    .cta.is-pulsing::before {
+      animation: shineMove .82s ease-out;
+      opacity: 1;
+    }
+
+    .cta.is-pulsing {
+      animation:
+        ctaEnter .62s cubic-bezier(.2, .9, .2, 1) both,
+        softPulse .72s ease-out;
+      animation-delay: 0ms, 0ms;
+      border-color: rgba(198, 161, 90, .75);
+    }
+
+    .cta.is-top-motion.is-pulsing {
+      animation:
+        ctaEnter .62s cubic-bezier(.2, .9, .2, 1) both,
+        topButtonZigzag 3.2s ease-in-out infinite,
+        softPulse .72s ease-out;
+      animation-delay: 0ms, .75s, 0ms;
+    }
+
+    .cta.is-pressed {
+      transform: scale(.975) !important;
+    }
+
+    .cta:hover .chev,
+    .cta:focus-visible .chev,
+    .cta.is-pulsing .chev {
+      animation: chevNudge .55s ease-in-out;
+    }
+
+    @keyframes ctaEnter {
+      from {
+        opacity: 0;
+        transform: translateY(14px) scale(.985);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+      }
+    }
+
+    @keyframes topButtonZigzag {
+      0%, 100% { transform: translate(0, 0) scale(1); }
+      12% { transform: translateX(7px) scale(1.006); }
+      24% { transform: translateX(-7px) scale(1.006); }
+      40% { transform: translate(7px, 5px) scale(1.01); }
+      56% { transform: translate(-7px, -5px) scale(1.01); }
+      72% { transform: translate(-7px, 5px) scale(1.01); }
+      88% { transform: translate(7px, -5px) scale(1.01); }
+    }
+
+    @keyframes softPulse {
+      0% { transform: translateY(0) scale(1); box-shadow: var(--soft-shadow); }
+      42% { transform: translateY(-5px) scale(1.018); box-shadow: 0 15px 30px rgba(12,31,24,.24); }
+      100% { transform: translateY(0) scale(1); box-shadow: var(--soft-shadow); }
+    }
+
+    @keyframes shineMove {
+      from { transform: translateX(-130%) skewX(-18deg); }
+      to { transform: translateX(130%) skewX(-18deg); }
+    }
+
+    @keyframes chevNudge {
+      0%, 100% { transform: translateX(0); }
+      50% { transform: translateX(5px); }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .cta,
+      .cta.is-pulsing,
+      .cta.is-top-motion,
+      .cta::before,
+      .chev,
+      .ripple {
+        animation: none !important;
+        transition: none !important;
+      }
+    }
+
+    .ripple {
+      position: absolute;
+      border-radius: 50%;
+      transform: scale(0);
+      background: rgba(198, 161, 90, .25);
+      animation: ripple .48s ease-out;
+      pointer-events: none;
+    }
+
+    @keyframes ripple {
+      to {
+        transform: scale(4);
+        opacity: 0;
+      }
+    }
+
+    @media (min-width: 700px) {
+      body {
+        padding: 24px 0;
+      }
+
+      .page-shell {
+        min-height: auto;
+        border-radius: 42px;
+        border: 10px solid #111;
+        box-shadow: 0 24px 60px rgba(0,0,0,.25);
+      }
+    }
+
+    @media (max-width: 360px) {
+      .content {
+        padding-inline: 14px;
+      }
+
+      .spacer-hero {
+        height: 164px;
+      }
+
+      .value-card h1 {
+        font-size: 19px;
+      }
+
+      .cta-label {
+        font-size: 13.5px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main class="page-shell">
+    <div class="hero-bg" aria-hidden="true"></div>
+    <div class="decor-line" aria-hidden="true"></div>
+
+    <section class="content">
+      <header class="brand-header">
+        <div class="logo-mark" aria-label="The Highland Park Resort Bogor Logo">
+          <img src="https://thehighlandparkresortbogor.com/Indonesia/wp-content/uploads/2022/10/LOGO-BARU.png" alt="The Highland Park Resort Bogor" />
+        </div>
+      </header>
+
+      <div class="spacer-hero" aria-hidden="true"></div>
+
+      <section class="value-card" aria-label="Resort highlight">
+        <h1>THE HIGHLAND PARK<br />RESORT HOTEL BOGOR</h1>
+        <p>Glamping, Meeting, Outbound, Fun Activities & Geobound, surrounded by the beauty of Mount Salak. More Experiences</p>
+
+        <div class="audiences">
+          <div class="audience-item">
+            <span class="audience-icon">♧</span>
+            <span>Family<br />Staycation</span>
+          </div>
+          <div class="audience-item">
+            <span class="audience-icon">♜</span>
+            <span>Corporate<br />Gathering</span>
+          </div>
+          <div class="audience-item">
+            <span class="audience-icon">♡</span>
+            <span>Weddings<br />&amp; Events</span>
+          </div>
+        </div>
+      </section>
+
+      <nav class="links" aria-label="Official resort links">
+        <a class="cta" href="https://thehighlandparkresortbogor.com" target="_blank" rel="noopener" data-track="official_website">
+          <span class="cta-icon">◎</span>
+          <span class="cta-label">Our Menu</span>
+          <span class="chev">›</span>
+        </a>
+
+         <nav class="links" aria-label="Official resort links">
+        <a class="cta" href="https://thehighlandparkresortbogor.com" target="_blank" rel="noopener" data-track="official_website">
+          <span class="cta-icon">◎</span>
+          <span class="cta-label">Official Website</span>
+          <span class="chev">›</span>
+        </a>
+ 
+
+        <a class="cta" href="https://maps.google.com/?q=The%20Highland%20Park%20Resort%20Bogor" target="_blank" rel="noopener" data-track="google_maps">
+          <span class="cta-icon">⌖</span>
+          <span class="cta-label">Google Maps Location</span>
+          <span class="chev">›</span>
+        </a>
+
+        <a class="cta" href="#guest-directory" data-track="guest_directory">
+          <span class="cta-icon">▤</span>
+          <span class="cta-label">Guest Comment</span>
+          <span class="chev">›</span>
+        </a>
+
+
+        <a class="cta" href="https://instagram.com/thehighlandparkbogor" target="_blank" rel="noopener" data-track="instagram">
+          <span class="cta-icon">▢</span>
+          <span class="cta-label">Instagram</span>
+          <span class="chev">›</span>
+        </a>
+
+        <a class="cta" href="https://tiktok.com/@thehighlandparkbogor" target="_blank" rel="noopener" data-track="tiktok">
+          <span class="cta-icon">♪</span>
+          <span class="cta-label">TikTok</span>
+          <span class="chev">›</span>
+        </a>
+      </nav>
+
+      <footer class="footer">
+        <div class="footer-divider" aria-hidden="true"></div>
+        <h2>The Highland Park Resort Bogor</h2>
+        <p>Where Nature, Comfort &amp; Memories Unite</p>
+      </footer>
+    </section>
+  </main>
+
+  <script>
+    const buttons = document.querySelectorAll('.cta');
+    const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    buttons.forEach((button, index) => {
+      button.style.setProperty('--enter-delay', '0ms');
+      button.style.setProperty('--float-delay', '0ms');
+
+      // Hanya tombol paling atas yang bergerak kanan-kiri dan diagonal.
+      if (index === 0 && !reduceMotion) {
+        button.classList.add('is-top-motion');
+      }
+
+      button.addEventListener('pointerdown', function () {
+        this.classList.add('is-pressed');
+      });
+
+      button.addEventListener('pointerup', function () {
+        this.classList.remove('is-pressed');
+      });
+
+      button.addEventListener('pointerleave', function () {
+        this.classList.remove('is-pressed');
+      });
+
+      button.addEventListener('click', function (event) {
+        const rect = this.getBoundingClientRect();
+        const size = Math.max(rect.width, rect.height);
+        const ripple = document.createElement('span');
+        ripple.className = 'ripple';
+        ripple.style.width = ripple.style.height = size + 'px';
+        ripple.style.left = event.clientX - rect.left - size / 2 + 'px';
+        ripple.style.top = event.clientY - rect.top - size / 2 + 'px';
+        this.appendChild(ripple);
+        setTimeout(() => ripple.remove(), 520);
+
+        const eventName = 'cta_click_' + (this.dataset.track || 'unknown');
+        console.log(eventName);
+
+        if (window.gtag) {
+          window.gtag('event', eventName, {
+            page_title: 'The Highland Park Resort Bogor Link Bio'
+          });
+        }
+      });
+    });
+
+    // Auto pulse hanya untuk tombol paling atas. Tombol lain tetap diam.
+    if (!reduceMotion && buttons.length) {
+      const topButton = buttons[0];
+      const pulseTopButton = () => {
+        topButton.classList.add('is-pulsing');
+
+        setTimeout(() => {
+          topButton.classList.remove('is-pulsing');
+        }, 760);
+      };
+
+      setTimeout(pulseTopButton, 950);
+      setInterval(pulseTopButton, 2800);
+    }
+  </script>
+</body>
+</html>
