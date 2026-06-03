@@ -338,17 +338,24 @@
 
 
 
-    /* Button motion: hanya tombol paling atas yang bergerak zig-zag */
+    /* Button motion: hanya tombol paling atas yang bergerak zig-zag
+       Versi FIX MOBILE: animasi dibuat langsung via CSS :first-child,
+       jadi tetap jalan walaupun JavaScript terlambat/load cache. */
     .cta {
       will-change: transform, box-shadow;
+      transform: translate3d(0,0,0);
+      backface-visibility: hidden;
     }
 
-    .cta.is-top-motion {
-      animation:
-        ctaEnter .62s cubic-bezier(.2, .9, .2, 1) both,
-        topButtonZigzag 3.2s ease-in-out infinite;
-      animation-delay: 0ms, .75s;
-      border-color: rgba(198, 161, 90, .62);
+    .links .cta:first-child {
+      animation: topButtonZigzagMobile 2.15s ease-in-out infinite !important;
+      border-color: rgba(198, 161, 90, .78);
+      box-shadow: 0 11px 24px rgba(12, 31, 24, .20);
+      z-index: 2;
+    }
+
+    .links .cta:first-child .chev {
+      animation: topChevronMove 2.15s ease-in-out infinite;
     }
 
     .cta::before {
@@ -361,91 +368,67 @@
       pointer-events: none;
     }
 
+    .links .cta:first-child::before {
+      animation: shineMove 2.15s ease-in-out infinite;
+      opacity: 1;
+    }
+
     .cta:hover,
     .cta:focus-visible {
-      transform: translateY(-3px) scale(1.012);
       box-shadow: 0 13px 26px rgba(12, 31, 24, .20);
       border-color: rgba(198, 161, 90, .72);
       outline: none;
     }
 
     .cta:hover::before,
-    .cta:focus-visible::before,
-    .cta.is-pulsing::before {
+    .cta:focus-visible::before {
       animation: shineMove .82s ease-out;
       opacity: 1;
-    }
-
-    .cta.is-pulsing {
-      animation:
-        ctaEnter .62s cubic-bezier(.2, .9, .2, 1) both,
-        softPulse .72s ease-out;
-      animation-delay: 0ms, 0ms;
-      border-color: rgba(198, 161, 90, .75);
-    }
-
-    .cta.is-top-motion.is-pulsing {
-      animation:
-        ctaEnter .62s cubic-bezier(.2, .9, .2, 1) both,
-        topButtonZigzag 3.2s ease-in-out infinite,
-        softPulse .72s ease-out;
-      animation-delay: 0ms, .75s, 0ms;
     }
 
     .cta.is-pressed {
       transform: scale(.975) !important;
     }
 
-    .cta:hover .chev,
-    .cta:focus-visible .chev,
-    .cta.is-pulsing .chev {
-      animation: chevNudge .55s ease-in-out;
-    }
-
-    @keyframes ctaEnter {
-      from {
-        opacity: 0;
-        transform: translateY(14px) scale(.985);
+    @keyframes topButtonZigzagMobile {
+      0%, 100% {
+        transform: translate3d(0, 0, 0) scale(1);
       }
-      to {
-        opacity: 1;
-        transform: translateY(0) scale(1);
+      12% {
+        transform: translate3d(14px, 0, 0) scale(1.012);
       }
-    }
-
-    @keyframes topButtonZigzag {
-      0%, 100% { transform: translate(0, 0) scale(1); }
-      12% { transform: translateX(7px) scale(1.006); }
-      24% { transform: translateX(-7px) scale(1.006); }
-      40% { transform: translate(7px, 5px) scale(1.01); }
-      56% { transform: translate(-7px, -5px) scale(1.01); }
-      72% { transform: translate(-7px, 5px) scale(1.01); }
-      88% { transform: translate(7px, -5px) scale(1.01); }
-    }
-
-    @keyframes softPulse {
-      0% { transform: translateY(0) scale(1); box-shadow: var(--soft-shadow); }
-      42% { transform: translateY(-5px) scale(1.018); box-shadow: 0 15px 30px rgba(12,31,24,.24); }
-      100% { transform: translateY(0) scale(1); box-shadow: var(--soft-shadow); }
+      24% {
+        transform: translate3d(-14px, 0, 0) scale(1.012);
+      }
+      40% {
+        transform: translate3d(14px, 9px, 0) scale(1.016);
+      }
+      56% {
+        transform: translate3d(-14px, -9px, 0) scale(1.016);
+      }
+      72% {
+        transform: translate3d(-14px, 9px, 0) scale(1.016);
+      }
+      88% {
+        transform: translate3d(14px, -9px, 0) scale(1.016);
+      }
     }
 
     @keyframes shineMove {
-      from { transform: translateX(-130%) skewX(-18deg); }
-      to { transform: translateX(130%) skewX(-18deg); }
+      0%, 45% { transform: translateX(-130%) skewX(-18deg); opacity: 0; }
+      60% { opacity: 1; }
+      100% { transform: translateX(130%) skewX(-18deg); opacity: 0; }
     }
 
-    @keyframes chevNudge {
+    @keyframes topChevronMove {
       0%, 100% { transform: translateX(0); }
       50% { transform: translateX(5px); }
     }
 
-    @media (prefers-reduced-motion: reduce) {
-      .cta,
-      .cta.is-pulsing,
-      .cta.is-top-motion,
-      .cta::before,
-      .chev,
-      .ripple {
+    /* Catatan: jangan matikan animasi di mobile meskipun setting reduce motion aktif,
+       karena user meminta tombol paling atas tetap bergerak jelas. */
+
+    .ripple {
         animation: none !important;
         transition: none !important;
       }
@@ -533,19 +516,20 @@
         </div>
       </section>
 
-      <nav class="links" aria-label="Official resort links">
+	<nav class="links" aria-label="Official resort links">
         <a class="cta" href="https://thehighlandparkresortbogor.com" target="_blank" rel="noopener" data-track="official_website">
-          <span class="cta-icon">&#127858;</span>
+          <span class="cta-icon">&#127858</span>
           <span class="cta-label">Our Menu</span>
           <span class="chev">›</span>
         </a>
 
-         <nav class="links" aria-label="Official resort links">
+      
         <a class="cta" href="https://thehighlandparkresortbogor.com" target="_blank" rel="noopener" data-track="official_website">
           <span class="cta-icon">◎</span>
           <span class="cta-label">Official Website</span>
           <span class="chev">›</span>
         </a>
+
  
 
         <a class="cta" href="https://maps.google.com/?q=The%20Highland%20Park%20Resort%20Bogor" target="_blank" rel="noopener" data-track="google_maps">
@@ -584,16 +568,15 @@
 
   <script>
     const buttons = document.querySelectorAll('.cta');
-    const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-    buttons.forEach((button, index) => {
-      button.style.setProperty('--enter-delay', '0ms');
-      button.style.setProperty('--float-delay', '0ms');
+    buttons.forEach((button) => {
+      button.addEventListener('touchstart', function () {
+        this.classList.add('is-pressed');
+      }, { passive: true });
 
-      // Hanya tombol paling atas yang bergerak kanan-kiri dan diagonal.
-      if (index === 0 && !reduceMotion) {
-        button.classList.add('is-top-motion');
-      }
+      button.addEventListener('touchend', function () {
+        this.classList.remove('is-pressed');
+      });
 
       button.addEventListener('pointerdown', function () {
         this.classList.add('is-pressed');
@@ -628,21 +611,6 @@
         }
       });
     });
-
-    // Auto pulse hanya untuk tombol paling atas. Tombol lain tetap diam.
-    if (!reduceMotion && buttons.length) {
-      const topButton = buttons[0];
-      const pulseTopButton = () => {
-        topButton.classList.add('is-pulsing');
-
-        setTimeout(() => {
-          topButton.classList.remove('is-pulsing');
-        }, 760);
-      };
-
-      setTimeout(pulseTopButton, 950);
-      setInterval(pulseTopButton, 2800);
-    }
   </script>
 </body>
 </html>
