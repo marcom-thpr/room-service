@@ -269,6 +269,69 @@
       margin-left: auto;
     }
 
+
+    .footer-social {
+      width: calc(100% - 8px);
+      margin: 26px auto 0;
+      text-align: center;
+      color: var(--cream-2);
+    }
+
+    .footer-social-title {
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 15px;
+      font-weight: 500;
+      letter-spacing: .03em;
+      color: var(--gold-2);
+      margin-bottom: 12px;
+    }
+
+    .footer-social-icons {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 18px;
+      margin-bottom: 20px;
+    }
+
+    .footer-social-icon {
+      width: 42px;
+      height: 42px;
+      border-radius: 999px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--cream-2);
+      text-decoration: none;
+      border: 1px solid rgba(217, 189, 119, .55);
+      background: rgba(255, 250, 241, .06);
+      box-shadow: inset 0 1px 0 rgba(255,255,255,.10), 0 8px 18px rgba(0,0,0,.12);
+      transition: transform .18s ease, border-color .18s ease, background .18s ease;
+    }
+
+    .footer-social-icon svg {
+      width: 20px;
+      height: 20px;
+      display: block;
+      fill: none;
+      stroke: currentColor;
+      stroke-width: 1.9;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+
+    .footer-social-icon:hover,
+    .footer-social-icon:focus-visible {
+      transform: translateY(-2px);
+      border-color: rgba(217, 189, 119, .9);
+      background: rgba(255, 250, 241, .12);
+      outline: none;
+    }
+
+    .footer-social-icon:active {
+      transform: scale(.94);
+    }
+
     .footer {
       margin: 27px auto 0;
       text-align: center;
@@ -338,9 +401,7 @@
 
 
 
-    /* Button motion: hanya tombol paling atas yang bergerak zig-zag
-       Versi FIX MOBILE: animasi dibuat langsung via CSS :first-child,
-       jadi tetap jalan walaupun JavaScript terlambat/load cache. */
+    /* Button motion: hanya tombol paling atas yang bergerak zig-zag */
     .cta {
       will-change: transform, box-shadow;
       transform: translate3d(0,0,0);
@@ -391,27 +452,13 @@
     }
 
     @keyframes topButtonZigzagMobile {
-      0%, 100% {
-        transform: translate3d(0, 0, 0) scale(1);
-      }
-      12% {
-        transform: translate3d(14px, 0, 0) scale(1.012);
-      }
-      24% {
-        transform: translate3d(-14px, 0, 0) scale(1.012);
-      }
-      40% {
-        transform: translate3d(14px, 9px, 0) scale(1.016);
-      }
-      56% {
-        transform: translate3d(-14px, -9px, 0) scale(1.016);
-      }
-      72% {
-        transform: translate3d(-14px, 9px, 0) scale(1.016);
-      }
-      88% {
-        transform: translate3d(14px, -9px, 0) scale(1.016);
-      }
+      0%, 100% { transform: translate3d(0, 0, 0) scale(1); }
+      14% { transform: translate3d(14px, 0, 0) scale(1.012); }
+      28% { transform: translate3d(-14px, 0, 0) scale(1.012); }
+      48% { transform: translate3d(14px, 9px, 0) scale(1.016); }
+      66% { transform: translate3d(-14px, -9px, 0) scale(1.016); }
+      82% { transform: translate3d(-14px, 9px, 0) scale(1.016); }
+      94% { transform: translate3d(14px, -9px, 0) scale(1.016); }
     }
 
     @keyframes shineMove {
@@ -423,15 +470,6 @@
     @keyframes topChevronMove {
       0%, 100% { transform: translateX(0); }
       50% { transform: translateX(5px); }
-    }
-
-    /* Catatan: jangan matikan animasi di mobile meskipun setting reduce motion aktif,
-       karena user meminta tombol paling atas tetap bergerak jelas. */
-
-    .ripple {
-        animation: none !important;
-        transition: none !important;
-      }
     }
 
     .ripple {
@@ -481,7 +519,6 @@
       }
     }
   </style>
-</head>
 <body>
   <main class="page-shell">
     <div class="hero-bg" aria-hidden="true"></div>
@@ -516,21 +553,25 @@
         </div>
       </section>
 
-	<nav class="links" aria-label="Official resort links">
-        <a class="cta" href="https://thehighlandparkresortbogor.com" target="_blank" rel="noopener" data-track="official_website">
-          <span class="cta-icon">&#127858</span>
-          <span class="cta-label">Our Menu</span>
+      <nav class="links" aria-label="Official resort links">
+        <a class="cta" href="https://drive.google.com/file/d/1GyPuwXq1U_NVN3tAV8Mxtd4ZxXWNG0GY/view?usp=drivesdk" target="_blank" rel="noopener" data-track="menu_restaurant">
+          <span class="cta-icon">&#127858;</span>
+          <span class="cta-label">MENU RESTAURANT</span>
           <span class="chev">›</span>
         </a>
 
-      
+       <nav class="links" aria-label="Official resort links">
+        <a class="cta" href="https://drive.google.com/file/d/1MCzif7lLL7-f5mG_2GRqxsUzsrDYlEKh/view?pli=1" target="_blank" rel="noopener" data-track="menu_room_service">
+          <span class="cta-icon">&#127858;</span>
+          <span class="cta-label">MENU ROOM SERVICE</span>
+          <span class="chev">›</span>
+        </a>
+
         <a class="cta" href="https://thehighlandparkresortbogor.com" target="_blank" rel="noopener" data-track="official_website">
           <span class="cta-icon">◎</span>
           <span class="cta-label">Official Website</span>
           <span class="chev">›</span>
         </a>
-
- 
 
         <a class="cta" href="https://maps.google.com/?q=The%20Highland%20Park%20Resort%20Bogor" target="_blank" rel="noopener" data-track="google_maps">
           <span class="cta-icon">⌖</span>
@@ -544,30 +585,44 @@
           <span class="chev">›</span>
         </a>
 
-
-        <a class="cta" href="https://instagram.com/thehighlandparkbogor" target="_blank" rel="noopener" data-track="instagram">
-          <span class="cta-icon">▢</span>
-          <span class="cta-label">Instagram</span>
-          <span class="chev">›</span>
-        </a>
-
-        <a class="cta" href="https://tiktok.com/@thehighlandparkbogor" target="_blank" rel="noopener" data-track="tiktok">
-          <span class="cta-icon">♪</span>
-          <span class="cta-label">TikTok</span>
+        <a class="cta" href="https://instagram.com/thehighlandparkbogor" target="_blank" rel="noopener" data-track="contact_us">
+          <span class="cta-icon">☏</span>
+          <span class="cta-label">Contact Us</span>
           <span class="chev">›</span>
         </a>
       </nav>
 
-      <footer class="footer">
-        <div class="footer-divider" aria-hidden="true"></div>
-        <h2>The Highland Park Resort Bogor</h2>
-        <p>Where Nature, Comfort &amp; Memories Unite</p>
+      <footer class="footer-social" aria-label="Social media footer">
+        <p class="footer-social-title">Follow Our Social Media</p>
+
+        <div class="footer-social-icons">
+          <a class="footer-social-icon" href="https://www.instagram.com/thehighlandparkresortbogor" target="_blank" rel="noopener" aria-label="Instagram" data-track="instagram">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <rect x="4" y="4" width="16" height="16" rx="5"></rect>
+              <circle cx="12" cy="12" r="3.5"></circle>
+              <circle cx="17" cy="7" r="0.8"></circle>
+            </svg>
+          </a>
+
+          <a class="footer-social-icon" href="https://www.tiktok.com/@highlandparkresortbogor" target="_blank" rel="noopener" aria-label="TikTok" data-track="tiktok">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M14 4v10.2a4.2 4.2 0 1 1-4.2-4.2"></path>
+              <path d="M14 4c.7 3 2.4 4.8 5 5"></path>
+            </svg>
+          </a>
+
+          <a class="footer-social-icon" href="https://www.facebook.com/thehighlandparkresortbogor" target="_blank" rel="noopener" aria-label="Facebook" data-track="facebook">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M14 8h3V4h-3c-3 0-5 2-5 5v3H6v4h3v4h4v-4h3l1-4h-4V9c0-.6.4-1 1-1z"></path>
+            </svg>
+          </a>
+        </div>
       </footer>
     </section>
   </main>
 
   <script>
-    const buttons = document.querySelectorAll('.cta');
+    const buttons = document.querySelectorAll('.cta, .footer-social-icon');
 
     buttons.forEach((button) => {
       button.addEventListener('touchstart', function () {
@@ -596,8 +651,12 @@
         const ripple = document.createElement('span');
         ripple.className = 'ripple';
         ripple.style.width = ripple.style.height = size + 'px';
-        ripple.style.left = event.clientX - rect.left - size / 2 + 'px';
-        ripple.style.top = event.clientY - rect.top - size / 2 + 'px';
+
+        const clientX = event.clientX || rect.left + rect.width / 2;
+        const clientY = event.clientY || rect.top + rect.height / 2;
+
+        ripple.style.left = clientX - rect.left - size / 2 + 'px';
+        ripple.style.top = clientY - rect.top - size / 2 + 'px';
         this.appendChild(ripple);
         setTimeout(() => ripple.remove(), 520);
 
